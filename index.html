@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./imgs/logo@2x.png">
+    <title>Weather</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg px-1 py-5  p-lg-5">
+    <div class="container ">
+      <a class="navbar-brand d-flex" href="./index.html">
+        <div class="brandimg">
+         <img src="./imgs/logo@2x.png" alt="logo"> 
+        </div>
+        <div class="brandtxt ms-3">
+          <h1 class="fs-6 text-white mb-1">Weather</h1>
+          <p class="mb-0">tagline goes here</p>
+        </div>
+      
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars text-white fs-6"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item px-0 px-lg-2 ">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item px-0 px-lg-2">
+            <a class="nav-link" href="#">News
+            </a>
+          </li>
+          <li class="nav-item px-0 px-lg-2">
+            <a class="nav-link" href="#">Live Cameras
+            </a>
+          </li>
+          <li class="nav-item px-0 px-lg-2">
+            <a class="nav-link" href="#">Photos
+            </a>
+          </li>
+          <li class="nav-item  px-0 px-lg-2">
+            <a class="nav-link contact-nav" href="#">Contact
+            </a>
+          </li>
+         
+         
+      
+      </div>
+    </div>
+  </nav>
+
+  <section class="main-body">
+    <div class="hero">
+     <div class="container">
+      <div class="input-group mb-3  ">
+        <input id="searchinput" type="text" class="form-control rounded-5     " placeholder="Find Your Location..." aria-label="Recipient’s username" aria-describedby="button-addon2">
+        <button class="btn btn-primary  rounded-5 " type="button" id="button-addon2">Find</button>
+      </div>
+     </div>
+    </div>
+    
+
+    <div class="container weather-style ">
+      
+      <div id="row11" class="row">
+        <div class="loader-style  position-fixed">
+          <svg class="pl" viewBox="0 0 160 160" width="160px" height="160px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#000"></stop>
+                <stop offset="100%" stop-color="#fff"></stop>
+              </linearGradient>
+              <mask id="mask1">
+                <rect x="0" y="0" width="160" height="160" fill="url(#grad)"></rect>
+              </mask>
+              <mask id="mask2">
+                <rect x="28" y="28" width="104" height="104" fill="url(#grad)"></rect>
+              </mask>
+            </defs>
+            
+            <g>
+              <g class="pl__ring-rotate">
+                <circle class="pl__ring-stroke" cx="80" cy="80" r="72" fill="none" stroke="hsl(223,90%,55%)" stroke-width="16" stroke-dasharray="452.39 452.39" stroke-dashoffset="452" stroke-linecap="round" transform="rotate(-45,80,80)"></circle>
+              </g>
+            </g>
+            <g mask="url(#mask1)">
+              <g class="pl__ring-rotate">
+                <circle class="pl__ring-stroke" cx="80" cy="80" r="72" fill="none" stroke="hsl(193,90%,55%)" stroke-width="16" stroke-dasharray="452.39 452.39" stroke-dashoffset="452" stroke-linecap="round" transform="rotate(-45,80,80)"></circle>
+              </g>
+            </g>
+            
+            <g>
+              <g stroke-width="4" stroke-dasharray="12 12" stroke-dashoffset="12" stroke-linecap="round" transform="translate(80,80)">
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(-135,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(-90,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(-45,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(0,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(45,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(90,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(135,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,10%,90%)" points="0,2 0,14" transform="rotate(180,0,0) translate(0,40)"></polyline>
+              </g>
+            </g>
+            <g mask="url(#mask1)">
+              <g stroke-width="4" stroke-dasharray="12 12" stroke-dashoffset="12" stroke-linecap="round" transform="translate(80,80)">
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(-135,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(-90,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(-45,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(0,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(45,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(90,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(135,0,0) translate(0,40)"></polyline>
+                <polyline class="pl__tick" stroke="hsl(223,90%,80%)" points="0,2 0,14" transform="rotate(180,0,0) translate(0,40)"></polyline>
+              </g>
+            </g>
+            
+            <g>
+              <g transform="translate(64,28)">
+                <g class="pl__arrows" transform="rotate(45,16,52)">
+                  <path fill="hsl(3,90%,55%)" d="M17.998,1.506l13.892,43.594c.455,1.426-.56,2.899-1.998,2.899H2.108c-1.437,0-2.452-1.473-1.998-2.899L14.002,1.506c.64-2.008,3.356-2.008,3.996,0Z"></path>
+                  <path fill="hsl(223,10%,90%)" d="M14.009,102.499L.109,58.889c-.453-1.421,.559-2.889,1.991-2.889H29.899c1.433,0,2.444,1.468,1.991,2.889l-13.899,43.61c-.638,2.001-3.345,2.001-3.983,0Z"></path>
+                </g>
+              </g>
+            </g>
+            <g mask="url(#mask2)">
+              <g transform="translate(64,28)">
+                <g class="pl__arrows" transform="rotate(45,16,52)">
+                  <path fill="hsl(333,90%,55%)" d="M17.998,1.506l13.892,43.594c.455,1.426-.56,2.899-1.998,2.899H2.108c-1.437,0-2.452-1.473-1.998-2.899L14.002,1.506c.64-2.008,3.356-2.008,3.996,0Z"></path>
+                  <path fill="hsl(223,90%,80%)" d="M14.009,102.499L.109,58.889c-.453-1.421,.559-2.889,1.991-2.889H29.899c1.433,0,2.444,1.468,1.991,2.889l-13.899,43.61c-.638,2.001-3.345,2.001-3.983,0Z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="col-lg-4 px-0  ">
+          <div class="card rounded-start-3 rounded-end-0">
+            <div class="card-header ps-2 pe-2 d-flex align-items-center justify-content-between">
+            
+            </div>
+            <div class="card-body py-4">
+              
+              </div>
+              
+              
+              
+            
+         
+          </div>
+          </div>
+          
+        
+
+           <div class="col-lg-4 px-0">
+          <div class="card rounded-start-0 rounded-end-0 card-2">
+            <div class="card-header ps-2 pe-2 ">
+             
+             
+            </div>
+            <div class="card-body card-2-body p-5  text-center ">
+              	
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-0">
+          <div class="card rounded-start-0 rounded-end-3">
+            <div class="card-header ps-2 pe-2 ">
+             
+             
+            </div>
+            <div class="card-body card-2-body p-5  text-center ">
+               
+              
+              
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    
+
+  
+  </section>
+
+  <section class="footer">
+    <div class="container">
+  <div class="row">
+    <div class="col-lg-8 input-footer">
+      <div class="input-group mb-3  ">
+        <input type="text" class="form-control input-foot rounded-5     " placeholder="Enter Your Email to Subscribe.." aria-label="Recipient’s username" aria-describedby="button-addon2">
+        <button class="btn btn-primary  rounded-5 " type="button" id="button-addon2">Subscribe</button>
+      </div> 
+    </div>
+    <div class="col-lg-3">
+      <div class="social-links">
+        <ul class="list-unstyled mb-0 mt-4 mt-lg-2 ms-0 ms-lg-5 d-flex">
+         <li>
+          <a href=""><i class="fa-brands fa-facebook-f "></i></a>
+         </li>
+         <li>
+          <a href=""><i class="fa-brands fa-twitter "></i></a>
+         </li>
+         <li>
+          <a href=""><i class="fa-brands fa-google-plus-g "></i></a>
+         </li>
+         <li>
+          <a href=""><i class="fa-brands fa-pinterest "></i></a>
+         </li>
+        </ul>
+      </div>
+      </div>
+  </div>
+  <p class="text-white mt-3 mt-lg-5  ms-2 copyright">Copyright 2014 Company name. Designed by OmarKhalifa. All rights reserved</p>
+</div>
+  </section>
+
+
+
+   
+      
+
+
+<script src="./js/main.js"></script>     
+<script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
