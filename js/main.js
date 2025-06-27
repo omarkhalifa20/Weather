@@ -78,7 +78,7 @@ let dayName3 = dateObj3.toLocaleDateString('en-GB', { weekday: 'long' });
               </div>
               <p class="text-primary">${arr.current.condition.text}</p>
               <ul class="list-unstyled d-flex">
-                <li class="me-4"><img class="me-1"  src="./imgs/icon-umberella.png" alt=""> ${arr.forecast.forecastday[0].daily_chance_of_rain}%</li>
+                <li class="me-4"><img class="me-1"  src="./imgs/icon-umberella.png" alt=""> ${arr.forecast.forecastday[0].day.daily_chance_of_rain}%</li>
                 <li class="me-4"><img class="me-1"  src="./imgs/icon-wind.png" alt=""> ${arr.current.wind_kph} km/h</li>
                 <li><img class="me-1"  src="./imgs/icon-compass.png" alt=""> ${arr.current.wind_dir}</li>
               </ul>
